@@ -6,7 +6,7 @@ Server side:
 `./server -port 8888`
 
 Client side:
-`./client -remote serveraddr:8888`
+`./client -remoteAddr serveraddr:8888`
 
 ## Note
 
