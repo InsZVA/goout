@@ -30,7 +30,9 @@ func (c *Client) ServeHTTP(w http.ResponseWriter, r *http.Request) {
         return
     }
     conns := tls.Client(conn, &tls.Config{InsecureSkipVerify: true})
-    r.WriteProxy(conns)
+
+    r.Header.Add("realto", r.RequestURI)
+    r.Write(conns)
     
     reader := bufio.NewReader(conns)
     resp, err := http.ReadResponse(reader, r)

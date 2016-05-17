@@ -15,7 +15,9 @@ type Server struct{
 }
 
 func (s *Server) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-    resp, err := transport.RoundTrip(r)
+    log.Println(realurl)
+    req, err := http.NewRequest(r.Method, realurl, r.Body)
+    resp, err := transport.RoundTrip(req)
     for k, v := range resp.Header {
         for _, vv := range v {
             w.Header().Add(k, vv)
