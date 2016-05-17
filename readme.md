@@ -11,3 +11,7 @@ Client side:
 ## Note
 
 Browser ---HTTP Request---> Client(located at local) ---HTTPS Security Request---> Server(em... might at foriegn)
+
+## Warning
+
+Please do not use this tool to escape GFW...
