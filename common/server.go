@@ -15,7 +15,7 @@ type Server struct{
 }
 
 func (s *Server) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-    log.Println(realurl)
+    realurl := r.Header.Get("realto")
     req, err := http.NewRequest(r.Method, realurl, r.Body)
     resp, err := transport.RoundTrip(req)
     for k, v := range resp.Header {

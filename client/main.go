@@ -8,7 +8,7 @@ import (
 )
 
 var port = flag.String("port", "1080", "Listen port.")
-var remote = flag.String("remoteAddr", "127.0.0.1:8888", "Remote server address.")
+var remote = flag.String("remoteAddr", "ramnode.inszva.com:8888", "Remote server address.")
 
 func main() {
     flag.Parse()
